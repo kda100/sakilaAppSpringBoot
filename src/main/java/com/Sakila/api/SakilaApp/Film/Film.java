@@ -5,6 +5,8 @@ import com.Sakila.api.SakilaApp.Language.Language;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Data
@@ -20,23 +22,26 @@ public class Film {
     private Long id;
 
     @Column(name = "title", nullable = false)
+    @NotBlank
     private String title;
 
     @Column(name = "description", nullable = false)
+    @NotBlank
     private String description;
 
     @Column(name = "release_year", nullable = false)
-    private String releaseYear;
+    @NotBlank
+    private int releaseYear;
 
-    @ManyToOne()
-    @JoinColumn(name="language_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="language_id", nullable = false)
     private Language language;
 
     @Column(name = "rental_duration", nullable = false)
     private int rentalDuration;
 
     @Column(name = "rental_rate", nullable = false)
-    private int rentalRate;
+    private double rentalRate;
 
     @Column(name = "rating", nullable = false)
     private String rating;
@@ -47,7 +52,8 @@ public class Film {
     @Column(name = "replacement_cost", nullable = false)
     private double replacementCost;
 
-    @ManyToMany()
+    @ManyToMany(cascade = CascadeType.ALL)
+    @NotEmpty
     @JoinTable(
             name = "film_category",
             joinColumns = {@JoinColumn(name = "film_id")},
@@ -55,5 +61,17 @@ public class Film {
     )
     private List<Category> categories;
 
-
+    public Film(String title, String description, int releaseYear, Language language, int rentalDuration,
+                double rentalRate, String rating, int length, double replacementCost, List<Category> categories) {
+        this.title = title;
+        this.description = description;
+        this.releaseYear = releaseYear;
+        this.language = language;
+        this.rentalDuration = rentalDuration;
+        this.rentalRate = rentalRate;
+        this.rating = rating;
+        this.length = length;
+        this.replacementCost = replacementCost;
+        this.categories = categories;
+    }
 }

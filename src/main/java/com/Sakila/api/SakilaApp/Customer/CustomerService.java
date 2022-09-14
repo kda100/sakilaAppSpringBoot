@@ -21,7 +21,7 @@ public class CustomerService {
     public Page<CustomerDTO> getAllCustomers(Long countryId, String sortByField, int offset, int pageSize) {
         Page<Customer> customers;
         if(countryId != -1) {
-            customers = customerRepository.findByAddresses_City_Country_id(countryId,
+            customers = customerRepository.findByAddress_City_Country_id(countryId,
                 PageRequest.of(offset, pageSize).withSort(Sort.by(Sort.Direction.ASC,
                     sortByField)));
         }  else {

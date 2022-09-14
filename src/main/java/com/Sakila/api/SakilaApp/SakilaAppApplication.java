@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @SpringBootApplication
-@CrossOrigin()
+@CrossOrigin
 public class SakilaAppApplication {
 
 	@Bean

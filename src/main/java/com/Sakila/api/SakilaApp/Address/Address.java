@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
@@ -18,20 +19,31 @@ public class Address {
     @Column(name = "address_id")
     private Long id;
 
-    @Column(name = "address")
+    @Column(name = "address", nullable = false)
+    @NotBlank
     private String address;
 
-    @Column(name = "district")
+    @Column(name = "district", nullable = false)
+    @NotBlank
     private String district;
 
-    @Column(name = "postal_code")
+    @Column(name = "postal_code", nullable = false)
+    @NotBlank
     private String postalCode;
 
-    @Column(name="phone")
+    @Column(name="phone", nullable = false)
+    @NotBlank
     private String phoneNumber;
 
-    @ManyToOne()
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "city_id")
     private City city;
 
+    public Address(String address, String district, String postalCode, String phoneNumber, City city) {
+        this.address = address;
+        this.district = district;
+        this.postalCode = postalCode;
+        this.phoneNumber = phoneNumber;
+        this.city = city;
+    }
 }

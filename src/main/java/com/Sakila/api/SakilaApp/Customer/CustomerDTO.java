@@ -13,5 +13,5 @@ public class CustomerDTO {
     private String lastName;
     private String email;
     private int active;
-    private List<AddressDTO> addresses;
+    private AddressDTO address;
 }

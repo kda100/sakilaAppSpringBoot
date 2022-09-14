@@ -6,8 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import javax.validation.constraints.*;
 
 @Data
 @NoArgsConstructor
@@ -20,23 +19,33 @@ public class Customer {
     @Column(name = "customer_id")
     private Long id;
 
-    @Column(name = "first_name")
+    @NotBlank
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
+    @NotBlank
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "email")
+    @Email
+    @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name= "active")
+    @Min(0)
+    @Max(1)
+    @Column(name= "active", nullable = false)
     private int active;
 
-    @OneToMany
+    @NotEmpty
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
-    private List<Address> addresses;
+    private Address address;
 
-    @Column(name = "create_date")
-    private Date createDate;
-
+    public Customer(String firstName, String lastName, String email, int active, Address address) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.active = active;
+        this.address = address;
+    }
 }

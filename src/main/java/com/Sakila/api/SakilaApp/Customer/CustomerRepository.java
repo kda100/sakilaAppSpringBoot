@@ -9,5 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
-    Page<Customer> findByAddresses_City_Country_id(Long id, Pageable pageable);
+    Page<Customer> findByAddress_City_Country_id(Long id, Pageable pageable);
+
 }
