@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.util.Assert.isInstanceOf;
 
 class AddressDTOTest {
-    AddressDTO addressDTO;
+    private AddressDTO addressDTO;
     private CountryDTO countryDTO;
     private CityDTO cityDTO;
 
