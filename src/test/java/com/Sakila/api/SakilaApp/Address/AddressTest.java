@@ -27,8 +27,8 @@ class AddressTest {
 
     @BeforeEach
     void setUp() {
-        country = new Country(countryName);
-        city = new City(cityName, country);
+        country = new Country(1L, countryName);
+        city = new City(1l, cityName, country);
         address = new Address(id, addressName, districtName, postCode, phoneNumber, city);
     }
 
