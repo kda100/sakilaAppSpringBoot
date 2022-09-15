@@ -1,6 +1,7 @@
 package com.Sakila.api.SakilaApp.Customer;
 
 import com.Sakila.api.SakilaApp.Address.AddressDTO;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.Column;

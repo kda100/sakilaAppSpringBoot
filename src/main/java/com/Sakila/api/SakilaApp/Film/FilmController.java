@@ -9,17 +9,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/films")
 @AllArgsConstructor
-@CrossOrigin()
+@CrossOrigin
 public class FilmController {
     private FilmService filmService;
 
 
     @GetMapping()
-    public Page<FilmDTO> getAllFilms(@RequestParam(name="categoryId", required = false) Long categoryId,
+    public Page<FilmDTO> getAllFilms(@RequestParam(name="categoryId", defaultValue = "-1", required = false) Long categoryId,
                                                   @RequestParam(name = "sortBy", required = false, defaultValue = "id") String sortByField,
-                                                  @RequestParam(name = "page", defaultValue = "1") int page,
+                                                  @RequestParam(name = "offset", defaultValue = "1") int offset,
                                                   @RequestParam(name = "pageSize", defaultValue = "25") int pageSize) {
-        return filmService.getAllFilms(categoryId, sortByField, page, pageSize);
+        return filmService.getAllFilms(categoryId, sortByField, offset, pageSize);
     }
 
     @GetMapping("{id}")

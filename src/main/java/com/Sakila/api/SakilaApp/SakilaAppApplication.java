@@ -1,5 +1,6 @@
 package com.Sakila.api.SakilaApp;
 
+import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,9 +15,10 @@ import java.util.Optional;
 public class SakilaAppApplication {
 
 	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
+	public ModelMapperHelper modelMapperHelper() {
+		return new ModelMapperHelper(new ModelMapper());
 	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(SakilaAppApplication.class, args);
 	}

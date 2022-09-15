@@ -1,5 +1,6 @@
 package com.Sakila.api.SakilaApp.Helpers;
 
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -8,14 +9,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 public class ModelMapperHelper {
-    static public <T, S> List<T> mapList(List<S> entityList, Class<T> targetClass, ModelMapper modelMapper) {
-        return entityList.stream()
-                .map(entity -> modelMapper.map(entity, targetClass))
-                .collect(Collectors.toList());
-    }
+    private ModelMapper modelMapper;
 
-    static public <T, S> Page<T> mapPage(Page<S> entityPage, Class<T> targetClass, ModelMapper modelMapper) {
+    public <T, S> Page<T> mapPage(Page<S> entityPage, Class<T> targetClass) {
         return new PageImpl<T>(
                 entityPage.get().map(entity -> modelMapper.map(entity, targetClass))
                         .collect(Collectors.toList()),
