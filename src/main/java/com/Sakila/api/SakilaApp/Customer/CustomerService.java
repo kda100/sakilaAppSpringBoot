@@ -1,17 +1,12 @@
 package com.Sakila.api.SakilaApp.Customer;
-
 import com.Sakila.api.SakilaApp.Exceptions.ResourceNotFoundException;
-import com.Sakila.api.SakilaApp.Film.Film;
 import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

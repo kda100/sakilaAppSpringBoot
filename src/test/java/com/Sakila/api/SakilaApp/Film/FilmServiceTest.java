@@ -1,6 +1,4 @@
 package com.Sakila.api.SakilaApp.Film;
-
-import com.Sakila.api.SakilaApp.Customer.Customer;
 import com.Sakila.api.SakilaApp.Exceptions.ResourceNotFoundException;
 import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import org.junit.jupiter.api.BeforeEach;
