@@ -66,11 +66,6 @@ class CityTest {
     }
 
     @Test
-    void canEqual() {
-        assertEquals(true, city.canEqual(city));
-    }
-
-    @Test
     void testHashCode() {
         isInstanceOf(Integer.class, city.hashCode());
     }

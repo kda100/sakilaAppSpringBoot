@@ -1,13 +1,13 @@
 package com.Sakila.api.SakilaApp.Country;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Data
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "country")
 @AllArgsConstructor

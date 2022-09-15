@@ -1,11 +1,11 @@
 package com.Sakila.api.SakilaApp.City;
 
 import com.Sakila.api.SakilaApp.Country.CountryDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class CityDTO {

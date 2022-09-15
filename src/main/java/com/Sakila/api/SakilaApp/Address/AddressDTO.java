@@ -2,11 +2,11 @@ package com.Sakila.api.SakilaApp.Address;
 
 import com.Sakila.api.SakilaApp.City.City;
 import com.Sakila.api.SakilaApp.City.CityDTO;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressDTO {

@@ -1,16 +1,16 @@
 package com.Sakila.api.SakilaApp.Address;
 
 import com.Sakila.api.SakilaApp.City.City;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "address")
 public class Address {

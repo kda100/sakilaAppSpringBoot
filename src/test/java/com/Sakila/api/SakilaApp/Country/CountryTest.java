@@ -53,11 +53,6 @@ class CountryTest {
     }
 
     @Test
-    void canEqual() {
-        assertEquals(true, country.canEqual(country));
-    }
-
-    @Test
     void testHashCode() {
         isInstanceOf(Integer.class, country.hashCode());
     }

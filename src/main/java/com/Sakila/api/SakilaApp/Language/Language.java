@@ -5,10 +5,11 @@ import lombok.*;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Data
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "language")
-@Setter(value = AccessLevel.NONE)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Language {

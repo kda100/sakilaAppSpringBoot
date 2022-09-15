@@ -105,11 +105,6 @@ class AddressTest {
     }
 
     @Test
-    void canEqual() {
-        assertEquals(true, address.canEqual(address));
-    }
-
-    @Test
     void testHashCode() {
         isInstanceOf(Integer.class, address.hashCode());
     }

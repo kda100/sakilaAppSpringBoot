@@ -1,14 +1,14 @@
 package com.Sakila.api.SakilaApp.Customer;
 
 import com.Sakila.api.SakilaApp.Address.Address;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity

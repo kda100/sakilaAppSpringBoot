@@ -42,10 +42,6 @@ class AddressDTOTest {
         assertEquals(true, addressDTO.equals(addressDTO));
     }
 
-    @Test
-    void canEqual() {
-        assertEquals(true, addressDTO.canEqual(addressDTO));
-    }
 
     @Test
     void testHashCode() {
