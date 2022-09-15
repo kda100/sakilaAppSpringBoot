@@ -1,6 +1,4 @@
 package com.Sakila.api.SakilaApp.Customer;
-
-import com.Sakila.api.SakilaApp.Exceptions.ResourceNotFoundException;
 import com.Sakila.api.SakilaApp.Film.Film;
 import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import lombok.AllArgsConstructor;
@@ -11,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -28,13 +27,5 @@ public class CustomerService {
                     sortByField)));
         }
         return modelMapperHelper.mapPage(customers, CustomerDTO.class);
-    }
-
-    public Customer getCustomerById(Long id) {
-        if(customerRepository.existsById(id)) {
-            return customerRepository.findById(id).get();
-        } else {
-            throw new ResourceNotFoundException("Customer", "Id", id);
-        }
     }
 }

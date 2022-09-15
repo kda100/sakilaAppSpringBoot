@@ -20,9 +20,4 @@ public class CustomerController {
                                             @RequestParam(name = "pageSize", defaultValue = "25") int pageSize) {
         return customerService.getAllCustomers(countryId, sortByField, offset, pageSize);
     }
-
-    @GetMapping("{id}")
-    public Customer getCustomerById(@PathVariable Long id) {
-        return customerService.getCustomerById(id);
-    }
 }
