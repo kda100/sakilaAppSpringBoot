@@ -1,4 +1,6 @@
 package com.Sakila.api.SakilaApp.Customer;
+
+import com.Sakila.api.SakilaApp.Exceptions.ResourceNotFoundException;
 import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -54,5 +56,19 @@ class CustomerServiceTest {
         verify(customerRepository).findByAddress_City_Country_id(countryId,
                 PageRequest.of(offset, pageSize).withSort(Sort.by(Sort.Direction.ASC,
                 sortByField)));
+    }
+
+    @Test
+    void getsCustomerWithId() {
+        doReturn(true).when(customerRepository).existsById(customerId);
+        doReturn(Optional.of(new Customer())).when(customerRepository).findById(customerId);
+        underTest.getCustomerById(customerId);
+        verify(customerRepository).findById(customerId);
+    }
+
+    @Test
+    void throwsExceptionWhenIdDoesNotExist() {
+        doReturn(false).when(customerRepository).existsById(customerId);
+        assertThrows(ResourceNotFoundException.class, () -> underTest.getCustomerById(customerId));
     }
 }

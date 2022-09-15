@@ -21,4 +21,9 @@ public class FilmController {
                                                   @RequestParam(name = "pageSize", defaultValue = "25") int pageSize) {
         return filmService.getAllFilms(categoryId, sortByField, offset, pageSize);
     }
+
+    @GetMapping("{id}")
+    public Film getFilmById(@PathVariable Long id) {
+        return filmService.getFilmById(id);
+    }
 }

@@ -1,6 +1,7 @@
 package com.Sakila.api.SakilaApp.Film;
 
 import com.Sakila.api.SakilaApp.Customer.Customer;
+import com.Sakila.api.SakilaApp.Exceptions.ResourceNotFoundException;
 import com.Sakila.api.SakilaApp.Helpers.ModelMapperHelper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -52,5 +53,19 @@ class FilmServiceTest {
         underTest.getAllFilms(categoryId, sortByField, offset, pageSize);
         verify(filmRepository).findByCategories_id(categoryId, PageRequest.of(offset, pageSize).withSort(Sort.by(Sort.Direction.ASC,
                 sortByField)));
+    }
+
+    @Test
+    void getsFilmById() {
+        doReturn(true).when(filmRepository).existsById(filmId);
+        doReturn(Optional.of(new Film())).when(filmRepository).findById(filmId);
+        underTest.getFilmById(filmId);
+        verify(filmRepository).findById(filmId);
+    }
+
+    @Test
+    void throwsExceptionWhenIdDoesNotExist() {
+        doReturn(false).when(filmRepository).existsById(filmId);
+        assertThrows(ResourceNotFoundException.class, () -> underTest.getFilmById(filmId));
     }
 }
