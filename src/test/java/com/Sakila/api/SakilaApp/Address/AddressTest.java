@@ -88,7 +88,7 @@ class AddressTest {
 
     @Test
     void setPhoneNumber() {
-        address.setPostalCode("New phoneNumber");
+        address.setPhoneNumber("New phoneNumber");
         assertEquals("New phoneNumber", address.getPhoneNumber());
     }
 
