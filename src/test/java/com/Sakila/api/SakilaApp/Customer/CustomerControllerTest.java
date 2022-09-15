@@ -18,7 +18,7 @@ class CustomerControllerTest {
 
     private CustomerController underTest;
 
-    private Long customerId = -1l;
+
     private String sortByField = "id";
     private int offset = 0;
     private int pageSize = 25;
@@ -30,7 +30,16 @@ class CustomerControllerTest {
 
     @Test
     void testGetAllCustomers() {
-        customerService.getAllCustomers(customerId, sortByField, offset, pageSize);
-        verify(customerService).getAllCustomers(customerId, sortByField, offset, pageSize);
+        Long countryId = -1l;
+        underTest.getAllCustomer(countryId, sortByField, offset, pageSize);
+        verify(customerService).getAllCustomers(countryId, sortByField, offset, pageSize);
     }
+
+    @Test
+    void testGetOneCustomer() {
+        Long customerId = 1l;
+        underTest.getCustomerById(customerId);
+        verify(customerService).getCustomerById(customerId);
+    }
+
 }
