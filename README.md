@@ -9,3 +9,13 @@ This project makes use of the Controller, Service and Repository project structu
 This project also contains cucumber and unit tests and has a CI/CD pipeline to SonarCloud so code coverage in tests can be analysed.
 
 Some popular Maven dependencies used are Lombok, h2database and ModelMapper.
+
+Endspoints:
+
+All films: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/films
+
+All customers: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/customers
+
+One film: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/films/{id}
+
+One customer: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/customers/{id}
