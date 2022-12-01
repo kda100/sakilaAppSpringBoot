@@ -12,10 +12,10 @@ Some popular Maven dependencies used are Lombok, h2database and ModelMapper.
 
 Endspoints:
 
-All films: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/films
+All films: https://allenapplicationapis.co.uk/api/films
 
-All customers: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/customers
+All customers: https://allenapplicationapis.co.uk/api/customers
 
-One film: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/films/{id}
+One film: https://allenapplicationapis.co.uk/api/films/{id}
 
-One customer: http://sakilaservice-env.eba-jurekius.eu-west-2.elasticbeanstalk.com/api/customers/{id}
+One customer: https://allenapplicationapis.co.uk/api/customers/{id}

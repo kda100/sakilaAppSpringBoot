@@ -36,7 +36,7 @@ public class Film {
     private int releaseYear;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="language_id", nullable = false)
+    @JoinColumn(name = "language_id", nullable = false)
     private Language language;
 
     @Column(name = "rental_duration", nullable = false)
