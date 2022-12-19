@@ -9,7 +9,7 @@ This project makes use of the Controller, Service and Repository project structu
 This project also contains cucumber and unit tests and has a CI/CD pipeline to SonarCloud so code coverage in tests can be analysed.
 
 Some popular Maven dependencies used are Lombok, h2database and ModelMapper.
-
+<!-- 
 Endspoints:
 
 All films: https://allenapplicationapis.co.uk/api/films
@@ -18,4 +18,4 @@ All customers: https://allenapplicationapis.co.uk/api/customers
 
 One film: https://allenapplicationapis.co.uk/api/films/{id}
 
-One customer: https://allenapplicationapis.co.uk/api/customers/{id}
+One customer: https://allenapplicationapis.co.uk/api/customers/{id} -->
